@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace AppLanches.Services;
 
-internal class ApiService
+public class ApiService
 {
     private readonly HttpClient _httpClient;
-    private readonly string _baseUrl = "https://lf3jvkgb-7066.brs.devtunnels.ms/";
+    private readonly string _baseUrl = "https://tl1rl0mk-7066.brs.devtunnels.ms/";
     private readonly ILogger<ApiService> _logger;
 
     JsonSerializerOptions _serializerOptions;

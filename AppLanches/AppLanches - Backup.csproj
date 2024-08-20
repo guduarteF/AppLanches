@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\blackheart.png" />
+	  <None Remove="Resources\Images\cart.png" />
 	  <None Remove="Resources\Images\comboburguericon.png" />
 	  <None Remove="Resources\Images\delete.png" />
 	  <None Remove="Resources\Images\edit.png" />
