@@ -13,7 +13,7 @@ namespace AppLanches.Services;
 public class ApiService
 {
     private readonly HttpClient _httpClient;
-    private readonly string _baseUrl = "https://tl1rl0mk-7066.brs.devtunnels.ms/";
+    private readonly string _baseUrl = "https://0x22t941-7066.brs.devtunnels.ms/";
     private readonly ILogger<ApiService> _logger;
 
     JsonSerializerOptions _serializerOptions;
@@ -91,7 +91,7 @@ public class ApiService
             var jsonResult = await response.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<Token>(jsonResult, _serializerOptions);
 
-            Preferences.Set("acesstoken", result!.AcessToken);
+            Preferences.Set("accesstoken", result!.AccessToken);
             Preferences.Set("usuarioid", (int)result.UsuarioId!);
             Preferences.Set("usuarionome", result.UsuarioNome);
 
