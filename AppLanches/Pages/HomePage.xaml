@@ -54,7 +54,8 @@
 
         <CollectionView x:Name="CvMaisVendidos"
                         Grid.Row="4"
-                        SelectionMode="Single">
+                        SelectionMode="Single"
+                        SelectionChanged="CvMaisVendidos_SelectionChanged">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
@@ -93,7 +94,8 @@
                VerticalOptions="Center" />
         <CollectionView Grid.Row="6"
                         x:Name="CvPopulares"
-                        SelectionMode="Single">
+                        SelectionMode="Single"
+                        SelectionChanged="CvPopulares_SelectionChanged">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
