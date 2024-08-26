@@ -142,5 +142,23 @@ public partial class CarrinhoPage : ContentPage
     {
 		Navigation.PushAsync(new EnderecoPage());
     }
+
+    private async void TapConfirmarPedido_Tapped(object sender, TappedEventArgs e)
+    {
+		if (ItensCarrinhoCompra == null || !ItensCarrinhoCompra.Any())
+		{
+			await DisplayAlert("Informação", "Seu carrinho está vazio ou o pedido já foi confirmado.", "OK");
+			return;
+		}
+
+		var pedido = new Pedido()
+		{
+			Endereco = LblEndereco.Text,
+			UsuarioId = Preferences.Get("usuarioid", 0),
+			ValorTotal = Convert.ToDecimal(LblPrecoTotal.Text)
+		};
+
+		var response = await _apiService.ConfirmarPedido(pedido);
+    }
 }
 
