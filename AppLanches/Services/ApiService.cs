@@ -149,6 +149,62 @@ public class ApiService
         }
     }
 
+    public async Task<(bool Data, string? ErrorMessage)> AtualizaQuantidadeItemCarrinho(int produtoId, string acao)
+    {
+        try
+        {
+            var content = new StringContent(string.Empty, Encoding.UTF8, "application/json");
+            var response = await PutRequest($"api/ItensCarrinhoCompra?produtoId={produtoId}&acao={acao}", content);
+            if(response.IsSuccessStatusCode)
+            {
+                return (true, null);
+            }
+            else
+            {
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    string errorMessage = "Unauthorized";
+                    _logger.LogWarning(errorMessage);
+                    return (false, errorMessage);
+
+                }
+
+                string generalErrorMessage = $"Erro na requisição : {response.ReasonPhrase}";
+                _logger.LogError(generalErrorMessage);
+                return (false, generalErrorMessage);
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            string errorMessage = $"Erro de requisição HTTP: {ex.Message}";
+            _logger.LogError(errorMessage);
+            return (false, errorMessage);
+        }
+        catch (Exception ex)
+        {
+            string errorMessage = $"Erro inesperado: {ex.Message}";
+            _logger.LogError(errorMessage);
+            return (false, errorMessage);  
+        }
+    }
+
+    private async Task<HttpResponseMessage> PutRequest(string uri, HttpContent content)
+    {
+        var enderecoUrl = AppConfig.BaseUrl + uri;
+        try
+        {
+            AddAuthorizationHeader();
+            var result = await _httpClient.PutAsync(enderecoUrl, content);
+            return result;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Erro ao enviar requisição PUT para {uri}:{ex.Message}");
+            return new HttpResponseMessage(HttpStatusCode.BadRequest);
+        }
+
+    }
+
     public async Task<(List<Categoria>? Categorias, string? ErrorMessage)> GetCategorias()
     {
         return await GetAsync<List<Categoria>>("api/categorias");
@@ -164,6 +220,12 @@ public class ApiService
     {
         string endpoint = $"api/produtos/{produtoId}";
         return await GetAsync<Produto>(endpoint);
+    }
+
+    public async Task<(List<CarrinhoCompraItem>? CarrinhoCompraItems, string? ErrorMessage)> GetItensCarrinhoCompra(int usuarioId)
+    {
+        var endpoint = $"api/ItensCarrinhoCompra/{usuarioId}";
+        return await GetAsync<List<CarrinhoCompraItem>>(endpoint);
     }
 
     private async Task<(T? Data, string? ErroMessage)> GetAsync<T>(string endpoint)
@@ -223,5 +285,6 @@ public class ApiService
         }
     }
 
+  
    
 }

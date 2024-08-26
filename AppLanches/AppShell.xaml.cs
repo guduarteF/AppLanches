@@ -20,7 +20,7 @@ namespace AppLanches
         private void ConfigureShell()
         {
             var homePage = new HomePage(_apiService, _validator);
-            var carrinhoPage = new CarrinhoPage();
+            var carrinhoPage = new CarrinhoPage(_apiService, _validator);
             var favoritosPage = new FavoritosPage();
             var perfilPage = new PerfilPage();
 
@@ -29,7 +29,7 @@ namespace AppLanches
                 Items =
                 {
                     new ShellContent { Title = "Home", Icon = "home", Content = homePage },
-                    new ShellContent { Title = "Carrniho", Icon = "cart", Content = carrinhoPage },
+                    new ShellContent { Title = "Carrinho", Icon = "cart", Content = carrinhoPage },
                     new ShellContent { Title = "Favoritos", Icon = "heart", Content = favoritosPage },
                     new ShellContent { Title = "Perfil",Icon = "profile", Content=perfilPage }
 

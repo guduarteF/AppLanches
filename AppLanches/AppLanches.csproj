@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\blackheart.png" />
+	  <None Remove="Resources\Images\cart.png" />
 	  <None Remove="Resources\Images\comboburguericon.png" />
 	  <None Remove="Resources\Images\delete.png" />
 	  <None Remove="Resources\Images\edit.png" />
@@ -84,6 +85,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Pages\CarrinhoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\EnderecoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\FavoritosPage.xaml">
