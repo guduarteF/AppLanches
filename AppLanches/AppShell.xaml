@@ -9,11 +9,11 @@
         Shell.BackgroundColor="#a90409"
         Shell.ForegroundColor="White"
         Shell.TitleColor="White"
-        Shell.UnselectedColor="White"
+        Shell.UnselectedColor="Black"
         Shell.DisabledColor="#BFBFBF"
         Shell.TabBarBackgroundColor="#a90409"
         Shell.TabBarTitleColor="AntiqueWhite"
-        Shell.TabBarUnselectedColor="FloralWhite"
+        Shell.TabBarUnselectedColor="Black"
         Shell.TabBarForegroundColor="White">
 
 </Shell>
