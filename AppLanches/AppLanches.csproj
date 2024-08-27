@@ -60,8 +60,10 @@
 	  <None Remove="Resources\Images\blackheart.png" />
 	  <None Remove="Resources\Images\cart.png" />
 	  <None Remove="Resources\Images\comboburguericon.png" />
+	  <None Remove="Resources\Images\confirmado.gif" />
 	  <None Remove="Resources\Images\delete.png" />
 	  <None Remove="Resources\Images\edit.png" />
+	  <None Remove="Resources\Images\emptycart.png" />
 	  <None Remove="Resources\Images\faq.png" />
 	  <None Remove="Resources\Images\heart.png" />
 	  <None Remove="Resources\Images\home.png" />
@@ -87,6 +89,9 @@
 	  <MauiXaml Update="Pages\CarrinhoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\CarrinhoVazioPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\EnderecoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -103,6 +108,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\PedidoConfirmadoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\PerfilPage.xaml">
