@@ -57,13 +57,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\blackheart.png" />
 	  <None Remove="Resources\Images\cart.png" />
 	  <None Remove="Resources\Images\comboburguericon.png" />
 	  <None Remove="Resources\Images\confirmado.gif" />
 	  <None Remove="Resources\Images\delete.png" />
 	  <None Remove="Resources\Images\edit.png" />
 	  <None Remove="Resources\Images\emptycart.png" />
+	  <None Remove="Resources\Images\emptyheart.png" />
 	  <None Remove="Resources\Images\faq.png" />
 	  <None Remove="Resources\Images\heart.png" />
 	  <None Remove="Resources\Images\home.png" />
@@ -83,6 +83,8 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.9" />
 	</ItemGroup>
 
 	<ItemGroup>
