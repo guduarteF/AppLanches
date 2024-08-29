@@ -5,12 +5,12 @@
              Title="PerfilPage">
     <Grid RowDefinitions="Auto,5*,1*" RowSpacing="0">
         <VerticalStackLayout Grid.Row="0"
-                             BackgroundColor="Cyan"
+                             BackgroundColor="WhiteSmoke"
                              VerticalOptions="Start"
                              Spacing="1"
                              Padding="20">
 
-            <ImageButton Source="user1.png"
+            <ImageButton Source="user.png"
                          HeightRequest="120"
                          WidthRequest="120"
                          CornerRadius="60"
@@ -30,7 +30,7 @@
                              Margin="20"
                              Spacing="20" >
             <HorizontalStackLayout Spacing="10" >
-                <Image Source="pedidos" HeightRequest="30" />
+                <Image Source="orders.png" HeightRequest="30" />
                 <Label Text="Meus Pedidos"
                        FontAttributes="Bold"
                        FontSize="Medium" />
@@ -42,7 +42,7 @@
             <Border HeightRequest="1" BackgroundColor="Gray" />
 
             <HorizontalStackLayout Spacing="10" >
-                <Image Source="perfilconfig" HeightRequest="30" />
+                <Image Source="profilesettings.png" HeightRequest="30" />
                 <Label Text="Minha Conta"
                         FontAttributes="Bold"
                         FontSize="Medium" />
@@ -54,7 +54,7 @@
             <Border HeightRequest="1" BackgroundColor="Gray" />
 
             <HorizontalStackLayout Spacing="10">
-                <Image Source="perguntas" HeightRequest="30" />
+                <Image Source="faq.png" HeightRequest="30" />
                 <Label Text="Perguntas Frequentes"
                         FontAttributes="Bold"
                         FontSize="Medium" />

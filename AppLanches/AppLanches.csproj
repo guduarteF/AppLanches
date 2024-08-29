@@ -70,11 +70,13 @@
 	  <None Remove="Resources\Images\lanche.png" />
 	  <None Remove="Resources\Images\lancheicon.png" />
 	  <None Remove="Resources\Images\leftarrow.png" />
+	  <None Remove="Resources\Images\logout.png" />
 	  <None Remove="Resources\Images\orders.png" />
 	  <None Remove="Resources\Images\profile.png" />
 	  <None Remove="Resources\Images\profilesettings.png" />
 	  <None Remove="Resources\Images\rightarrow.png" />
 	  <None Remove="Resources\Images\upload.png" />
+	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Resources\Splash\5769177_60655.svg" />
 	</ItemGroup>
 

@@ -157,6 +157,31 @@ public class ApiService
             return new ApiResponse<bool> { ErrorMessage = ex.Message };
         }
     }
+
+    public async Task<ApiResponse<bool>> UploadImagemUsuario(byte[] imageArray)
+    {
+        try
+        {
+            var content = new MultipartFormDataContent();
+            content.Add(new ByteArrayContent(imageArray), "imagem", "image.jpg");
+            var response = await PostRequest("api/usuarios/uploadfoto", content);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                string errorMessage = response.StatusCode == HttpStatusCode.Unauthorized ? "Unauthorized" : $"Erro ao enviar requisição HTTP: {response.StatusCode}";
+
+                _logger.LogError($"Erro ao enviar requisição HTTP: {response.StatusCode}");
+                return new ApiResponse<bool> { ErrorMessage = errorMessage };
+            }
+            return new ApiResponse<bool> { Data = true };
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Erro ao fazer upload da imagem do usuário: {ex.Message}");
+            return new ApiResponse<bool> { ErrorMessage = ex.Message };
+        }
+    }
+
     private async Task<HttpResponseMessage> PostRequest(string uri, HttpContent content)
     {
         var enderecoUrl = _baseUrl + uri;
@@ -179,7 +204,7 @@ public class ApiService
         {
             var content = new StringContent(string.Empty, Encoding.UTF8, "application/json");
             var response = await PutRequest($"api/ItensCarrinhoCompra?produtoId={produtoId}&acao={acao}", content);
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 return (true, null);
             }
@@ -208,7 +233,7 @@ public class ApiService
         {
             string errorMessage = $"Erro inesperado: {ex.Message}";
             _logger.LogError(errorMessage);
-            return (false, errorMessage);  
+            return (false, errorMessage);
         }
     }
 
@@ -260,7 +285,7 @@ public class ApiService
 
             var response = await _httpClient.GetAsync(_baseUrl + endpoint);
 
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
                 var data = JsonSerializer.Deserialize<T>(responseString, _serializerOptions);
@@ -309,6 +334,11 @@ public class ApiService
         }
     }
 
-  
+    public async Task<(ImagemPerfil? imagemPerfil, string? ErrorMessage)> GetImagemPerfilUsuario()
+    {
+        string endpoint = "api/usuarios/ImagemPerfilUsuario";
+        return await GetAsync<ImagemPerfil>(endpoint);
+    }
+
    
 }
