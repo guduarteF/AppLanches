@@ -1,4 +1,5 @@
 ﻿using AppLanches.Models;
+using AppLanches.Pages;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -277,6 +278,26 @@ public class ApiService
         return await GetAsync<List<CarrinhoCompraItem>>(endpoint);
     }
 
+    public async Task<(ImagemPerfil? imagemPerfil, string? ErrorMessage)> GetImagemPerfilUsuario()
+    {
+        string endpoint = "api/usuarios/ImagemPerfilUsuario";
+        return await GetAsync<ImagemPerfil>(endpoint);
+    }
+
+
+    public async Task<(List<PedidoPorUsuario>?, string? ErrorMessage)> GetPedidosPorUsuario(int usuarioId)
+    {
+        string endpoint = $"api/pedidos/PedidosPorUsuario/{usuarioId}";
+        return await GetAsync<List<PedidoPorUsuario>>(endpoint);
+    }
+
+    public async Task<(List<PedidoDetalhe>?, string? ErrorMessage)> GetPedidoDetalhes(int pedidoId)
+    {
+        string endpoint = $"api/pedidos/DetalhesPedido/{pedidoId}";
+
+        return await GetAsync<List<PedidoDetalhe>>(endpoint);
+    }
+
     private async Task<(T? Data, string? ErroMessage)> GetAsync<T>(string endpoint)
     {
         try
@@ -323,8 +344,8 @@ public class ApiService
             _logger.LogError(ex, errorMessage);
             return (default, errorMessage);
         }
-    }
 
+    }
     private void AddAuthorizationHeader()
     {
         var token = Preferences.Get("accesstoken", string.Empty);
@@ -333,12 +354,5 @@ public class ApiService
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
     }
-
-    public async Task<(ImagemPerfil? imagemPerfil, string? ErrorMessage)> GetImagemPerfilUsuario()
-    {
-        string endpoint = "api/usuarios/ImagemPerfilUsuario";
-        return await GetAsync<ImagemPerfil>(endpoint);
-    }
-
-   
 }
+ 
