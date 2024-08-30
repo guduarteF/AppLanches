@@ -28,7 +28,9 @@ public partial class PedidosPage : ContentPage
 	{
 		try
 		{
-			var (pedidos, errorMessage) = await _apiService.GetPedidosPorUsuario(Preferences.Get("usuarioid", 0));
+            loadPedidosIndicator.IsRunning = true;
+            loadPedidosIndicator.IsVisible = true;
+            var (pedidos, errorMessage) = await _apiService.GetPedidosPorUsuario(Preferences.Get("usuarioid", 0));
 
 			if(errorMessage == "Unauthorized" && !_loginPageDisplayed)
 			{
@@ -54,6 +56,11 @@ public partial class PedidosPage : ContentPage
 		{
 			await DisplayAlert("Erro", "Ocorreu um erro ao obter os pedidos. Tente novamente mais tarde", "OK");
 		}
+		finally
+		{
+            loadPedidosIndicator.IsRunning = false;
+            loadPedidosIndicator.IsVisible = false;
+        }
 	}
     private void CvPedido_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
