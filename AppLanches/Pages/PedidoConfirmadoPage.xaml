@@ -6,7 +6,8 @@
     <VerticalStackLayout
         VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand"
-            Padding="20">
+            Padding="90"
+            BackgroundColor="White">
 
         <Image Source="confirmado.gif"
                HeightRequest="300"
@@ -16,9 +17,9 @@
         <Label Text="Seu pedido foi confirmado!"
                FontSize="24"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand"
+               VerticalOptions="Center"
                     TextColor="DarkBlue"
-                    Margin="0,20,0,0" />
+                    Margin="45,90,0,50" />
 
         <Button Text="Retornar"
                 HorizontalOptions="Center"

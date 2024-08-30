@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLanches.Pages.HomePage"
-             Title="HomePage">
+             Title="HomePage"
+             BackgroundColor="White">
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,3*,Auto,4*"
           RowSpacing="18"
-          Margin="15">
+          Margin="15"
+          BackgroundColor="White">
+        
 
         <VerticalStackLayout Grid.Row="0" Spacing="3">
             <Label x:Name="LblNomeUsuario"
@@ -28,7 +31,8 @@
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="20"
-                                         Orientation="Horizontal" />
+                                   Orientation="Horizontal"
+                                   />
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
@@ -39,6 +43,7 @@
                                Source="{Binding CaminhoImagem}"/>
                         <Label HorizontalOptions="Center"
                                FontSize="Small"
+                               TextColor="Black"
                                Text="{Binding Nome}"/>
                     </VerticalStackLayout>
                 </DataTemplate>
@@ -117,11 +122,13 @@
                                    FontAttributes="Bold"
                                    LineBreakMode="WordWrap"
                                    MaxLines="2"
+                                   TextColor="Black"
                                    HorizontalTextAlignment="Center"
                                    VerticalTextAlignment="Center"
                                    Text="{Binding Nome}" />
                             <Label Grid.Row="2"
                                    FontAttributes="Bold"
+                                   TextColor="Black"
                                    HorizontalTextAlignment="Center"
                                    VerticalTextAlignment="Center"
                                    Text="{Binding Preco, StringFormat='R$ {0:F2}'}"/>

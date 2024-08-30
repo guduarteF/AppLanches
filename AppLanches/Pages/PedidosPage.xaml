@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLanches.Pages.PedidosPage"
-             Title="PedidosPage">
+             Title="PedidosPage"
+             BackgroundColor="White">
     <VerticalStackLayout>
         <ActivityIndicator x:Name="loadPedidosIndicator"
                      IsRunning="false"
@@ -22,19 +23,20 @@
                     <Border Padding="15" Stroke="#87A7AC" StrokeShape="RoundRectangle 10">
                         <Grid RowDefinitions="Auto,Auto,Auto"
                               ColumnDefinitions="3*,7*">
-                            <Label Grid.Row="0" Grid.Column="0" Text="Pedido Id" />
-                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Id}" FontAttributes="Bold" />
-                            <Label Grid.Row="1" Grid.Column="0" Text="Data Pedido" />
+                            <Label Grid.Row="0" Grid.Column="0" Text="Pedido Id" TextColor="Black"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Id}" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Data Pedido" TextColor="Black"/>
                             <Label Grid.Row="1" Grid.Column="1"
                                    Text="{Binding DataPedido, StringFormat='{0:dd.MM.yyyy hh:mm}'}"
-                                   FontAttributes="Bold"/>
-                            <Label Grid.Row="2" Grid.Column="0" Text="Preço total" />
-                            <Label Grid.Row="2" Grid.Column="1" >
+                                   FontAttributes="Bold"
+                                   TextColor="Black"/>
+                            <Label Grid.Row="2" Grid.Column="0" Text="Preço total" TextColor="Black"/>
+                            <Label Grid.Row="2" Grid.Column="1" TextColor="Black" >
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="R$" />
-                                            <Span Text="{Binding PedidoTotal}" FontAttributes="Bold" />
+                                            <Span Text="R$" TextColor="Black"/>
+                                            <Span Text="{Binding PedidoTotal}" FontAttributes="Bold" TextColor="Black"/>
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>

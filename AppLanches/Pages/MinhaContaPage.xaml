@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLanches.Pages.MinhaContaPage"
-             Title="MinhaContaPage">
+             Title="MinhaContaPage"
+             BackgroundColor="White">
     <Grid RowDefinitions="Auto,*" RowSpacing="0">
         <VerticalStackLayout Grid.Row="0" BackgroundColor="WhiteSmoke" VerticalOptions="Start"
                           Spacing="1" Padding="20">
@@ -13,9 +14,9 @@
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Margin="20" Spacing="20">
-            <Entry Placeholder="Nome" x:Name="EntNome" />
-            <Entry Placeholder="Email" Keyboard="Email" x:Name="EntEmail" />
-            <Entry Placeholder="Telefone" Keyboard="Telephone" x:Name="EntFone" />
+            <Entry Placeholder="Nome" x:Name="EntNome" TextColor="Black" PlaceholderColor="Black"/>
+            <Entry Placeholder="Email" Keyboard="Email" x:Name="EntEmail" TextColor="Black" PlaceholderColor="Black"/>
+            <Entry Placeholder="Telefone" Keyboard="Telephone" x:Name="EntFone" TextColor="Black" PlaceholderColor="Black"/>
 
             <Button Text="Salvar"
                  FontSize="Large"

@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLanches.Pages.LoginPage"
              Title="LoginPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
 
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
         RowSpacing="20"
-        Margin="20,150,20,40">
+        Margin="20,150,20,40"
+        >
 
         <Image Grid.Row="0"
              Source="lanche.png"
@@ -25,15 +27,18 @@
              BackgroundColor="White">
             <VerticalStackLayout>
                 <Entry Placeholder="Email"
-                     x:Name="EntEmail" />
+                     x:Name="EntEmail" 
+                       TextColor="Black"/>
                 <Entry Placeholder="Password"
                       IsPassword="True"
-                      x:Name="EntPassword" />
+                      x:Name="EntPassword"
+                       TextColor="Black"/>
             </VerticalStackLayout>
         </Frame>
 
         <Button Grid.Row="3"
                 Text="Entrar"
+                TextColor="White"
                 FontSize="Medium"
                 x:Name="BtnSignIn"
                 BackgroundColor="#a90409"
@@ -44,7 +49,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="EndAndExpand">
 
-            <Label Text="Não tem conta ?"/>
+            <Label Text="Não tem conta ?" TextColor="Black"/>
             <Label Text="Faça o registro agora" TextColor="#a90409"
                    FontAttributes="Bold">
                 <Label.GestureRecognizers>

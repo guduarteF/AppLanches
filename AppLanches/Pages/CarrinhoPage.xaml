@@ -2,14 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLanches.Pages.CarrinhoPage"
-             Title="CarrinhoPage">
+             Title="CarrinhoPage"
+             BackgroundColor="White">
 
-    <Grid RowDefinitions="Auto, 8*, Auto, Auto"
-          Margin="20"
-          RowSpacing="20">
+    <Grid RowDefinitions="Auto,8*, Auto, Auto"
+          Margin="0"
+          RowSpacing="20"
+          BackgroundColor="White">
 
         <CollectionView Grid.Row="1"
-                        Margin="0,0,0,0"
+                        Margin="0,0"
                         x:Name="CvCarrinho">
 
             <CollectionView.ItemsLayout>
@@ -18,15 +20,15 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="10"
-                           CornerRadius="10"
+                    <Frame Padding="0"
+                           CornerRadius="0"
                            BorderColor="PaleVioletRed"
                            BackgroundColor="White">
 
                         <Grid RowDefinitions="Auto,Auto,Auto"
-                              ColumnDefinitions="3*,6*,1*"
-                              RowSpacing="5"
-                              ColumnSpacing="15">
+                              ColumnDefinitions="3*,6*,5*"
+                              RowSpacing="1"
+                              ColumnSpacing="0">
                             <Frame Padding="0"
                                    HorizontalOptions="Start"
                                    CornerRadius="15"
@@ -45,14 +47,16 @@
                                    HorizontalOptions="Start"
                                    VerticalOptions="Center"
                                    FontAttributes="Bold"
-                                   Text="{Binding ProdutoNome}"/>
+                                   Text="{Binding ProdutoNome}"
+                                   TextColor="Black"/>
 
                             <Label Grid.Row="1"
                                    Grid.Column="1"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Center"
                                    FontAttributes="Bold"
-                                   Text="{Binding Preco, StringFormat='R$ {0:F2}'}"/>
+                                   Text="{Binding Preco, StringFormat='R$ {0:F2}'}"
+                                   TextColor="Black"/>
 
                             <HorizontalStackLayout Grid.Row="2"
                                                    Grid.Column="1"
@@ -88,7 +92,8 @@
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"
                                         x:Name="BtnIncrementar"
-                                        Clicked="BtnIncrementar_Clicked"/>
+                                        Clicked="BtnIncrementar_Clicked"
+                                        TextColor="White"/>
                             </HorizontalStackLayout>
 
                             <ImageButton Grid.Row="2"
@@ -110,16 +115,19 @@
         <Frame Grid.Row="2"
                Padding="10"
                BackgroundColor="White"
-               BorderColor="White">
+               BorderColor="Black"
+               >
 
             <Grid RowDefinitions="Auto,Auto"
-                  ColumnDefinitions="8*,2*">
+                  ColumnDefinitions="8*,2*"
+                  >
 
                 <Label Grid.Row="0"
                        Grid.Column="0"
                        Text="Endereço de Entrega"
                        FontAttributes="Bold"
-                       VerticalOptions="Start" />
+                       VerticalOptions="Start" 
+                       TextColor="Black"/>
 
                 <ImageButton Grid.Row="0"
                              Padding="0"
@@ -130,12 +138,14 @@
                              VerticalOptions="Start"
                              Source="edit"
                              x:Name="BtnEditaEndereco"
-                             Clicked="BtnEditaEndereco_Clicked"/>
+                             Clicked="BtnEditaEndereco_Clicked"
+                             />
 
                 <Label Grid.Row="1"
                        Grid.Column="0"
                        Grid.ColumnSpan="2"
-                       x:Name="LblEndereco" />
+                       x:Name="LblEndereco" 
+                       TextColor="Black"/>
 
             </Grid>
         </Frame>

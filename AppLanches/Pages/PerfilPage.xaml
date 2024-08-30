@@ -27,13 +27,16 @@
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1"
-                             Margin="20"
-                             Spacing="20" >
+                             Margin="0"
+                             Spacing="10"
+                             Padding="10"
+                             BackgroundColor="White">
             <HorizontalStackLayout Spacing="10" >
                 <Image Source="orders.png" HeightRequest="30" />
                 <Label Text="Meus Pedidos"
                        FontAttributes="Bold"
-                       FontSize="Medium" />
+                       FontSize="Medium" 
+                       TextColor="Black"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer x:Name="TapPedidos" Tapped="TapPedidos_Tapped"/>
                 </HorizontalStackLayout.GestureRecognizers>
@@ -45,7 +48,8 @@
                 <Image Source="profilesettings.png" HeightRequest="30" />
                 <Label Text="Minha Conta"
                         FontAttributes="Bold"
-                        FontSize="Medium" />
+                        FontSize="Medium" 
+                       TextColor="Black"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer x:Name="MinhaConta" Tapped="MinhaConta_Tapped" />
                 </HorizontalStackLayout.GestureRecognizers>
@@ -57,7 +61,8 @@
                 <Image Source="faq.png" HeightRequest="30" />
                 <Label Text="Perguntas Frequentes"
                         FontAttributes="Bold"
-                        FontSize="Medium" />
+                        FontSize="Medium" 
+                       TextColor="Black"/>
                 <HorizontalStackLayout.GestureRecognizers>
                     <TapGestureRecognizer x:Name="Perguntas" Tapped="Perguntas_Tapped"/>
                 </HorizontalStackLayout.GestureRecognizers>
@@ -67,9 +72,10 @@
 
         <ImageButton Grid.Row="2"
                      Source="logout.png"
-                     HeightRequest="60"
-                     WidthRequest="60"
+                     HeightRequest="90"
+                     WidthRequest="900"
                      Padding="5"
+                     Background="White"
                      ToolTipProperties.Text="Logout"
                      HorizontalOptions="Center"
                      BackgroundColor="Transparent"
