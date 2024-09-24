@@ -1,3 +1,13 @@
+# Aplicativo mobile de venda de lanches 
+
+## 📖  Descrição
+
+Projeto Mobile com foco no Backend em C# .NET MAUI com EntityFramework. Desenvolvimento das Views no Frontend com XAML
+O Aplicativo ...
+
+<br/>
+
+
 ## :camera: Imagens 
 * ![image](https://github.com/user-attachments/assets/837bb5e9-76a1-4ddb-a8ac-073783eff644)
 
@@ -15,14 +25,7 @@
 
 
 
-# Aplicativo mobile de venda de lanches 
 
-## 📖  Descrição
-
-Projeto Mobile com foco no Backend em C# .NET MAUI com EntityFramework. Desenvolvimento das Views no Frontend com XAML
-O Aplicativo ...
-
-<br/>
 
 
 
