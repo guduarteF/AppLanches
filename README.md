@@ -3,7 +3,8 @@
 ## 📖  Descrição
 
 Projeto Mobile com foco no Backend em C# .NET MAUI com EntityFramework. Desenvolvimento das Views no Frontend com XAML
-O Aplicativo ...
+O Aplicativo foi desenvolvido com emulador Android 14.0 - API 34. 
+Este projeto consome a API Swagger: https://github.com/guduarteF/ApiECommerce
 
 ## 🛠️ Funcionalidades
 
